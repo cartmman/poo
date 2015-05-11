@@ -1,13 +1,17 @@
 <?php
-require_once "src\wsj\Cliente\Cliente.php";
+define('CLASS_DIR', 'src/');
+set_include_path(get_include_path().PATH_SEPARATOR.CLASS_DIR);
+spl_autoload_register();
 
 for($i=0;$i<=9;$i++) {
-    $c[$i] = new Cliente();
+    $c[$i] = new \wsj\Cliente\Types\ClientePF();
     $c[$i]->setNome("Nome do cliente ".$i)
           ->setCpf(mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9))
           ->setEndereco("Endereço do cliente ".$i)
           ->setEmail("cliente".$i."@email.com")
           ->setTelefone(mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9)."-".mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9));
+    $c[$i]->grauImportancia(mt_rand(1,5));
+    $c[$i]->enderecoCobranca("Endereço cobrança cliente ".$i);
     $clientes[] = $c[$i];
 }
 if($_REQUEST['ordem']=='asc') { ksort($clientes); }
@@ -56,6 +60,9 @@ if($_REQUEST['ordem']=='desc') { rsort($clientes);}
                 <th>Endereço</th>
                 <th>Telefone</th>
                 <th>Email</th>
+                <th>Tipo Cliente</th>
+                <th>Grau</th>
+                <th>Cobrança</th>
             </tr>
             <?php foreach($clientes as $cliente): ?>
             <tr>
@@ -64,6 +71,13 @@ if($_REQUEST['ordem']=='desc') { rsort($clientes);}
                 <td><?=$cliente->getEndereco() ;?></td>
                 <td><?=$cliente->getTelefone() ;?></td>
                 <td><?=$cliente->getEmail() ;?></td>
+                <?php if($cliente instanceof \wsj\Cliente\Types\ClientePF): ?>
+                        <td>Pessoa Física</td>
+                <?php else: ?>
+                        <td>Pessoa Jurídica</td>
+                <?php endif; ?>
+                <td><?=$cliente->getGrau() ;?></td>
+                <td><?=$cliente->getEnd() ;?></td>
             </tr>
             <?php endforeach; ?>
         </table>
