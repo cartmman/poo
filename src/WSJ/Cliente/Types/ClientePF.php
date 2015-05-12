@@ -1,7 +1,7 @@
 <?php
 namespace WSJ\Cliente\Types;
 
-use wsj\Cliente\ClienteAbstract;
+use WSJ\Cliente\ClienteAbstract;
 use WSJ\Cliente\ClienteEnderecoInterface;
 use WSJ\Cliente\ClienteGrauInterface;
 
