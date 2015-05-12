@@ -1,7 +1,7 @@
 <?php
-namespace wsj\Conta\Types;
+namespace WSJ\Conta\Types;
 
-use wsj\Conta\ContaAbstract as ContaAbstrata;
+use WSJ\Conta\ContaAbstract as ContaAbstrata;
 
 class ContaType extends ContaAbstrata {
 

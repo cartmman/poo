@@ -1,11 +1,13 @@
 <?php
-namespace wsj\Cliente\Types;
+namespace WSJ\Cliente\Types;
 
 use wsj\Cliente\ClienteAbstract;
-use wsj\Cliente\ClienteInterface;
+use WSJ\Cliente\ClienteEnderecoInterface;
+use WSJ\Cliente\ClienteGrauInterface;
 
-class ClientePF extends ClienteAbstract implements ClienteInterface {
+class ClientePF extends ClienteAbstract implements ClienteGrauInterface, ClienteEnderecoInterface {
 
+    private $cpf;
     private $grau;
     private $end;
 
@@ -17,6 +19,22 @@ class ClientePF extends ClienteAbstract implements ClienteInterface {
     public function enderecoCobranca($end){
         $this->end = $end;
         return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCpf()
+    {
+        return $this->cpf;
+    }
+
+    /**
+     * @param mixed $cpf
+     */
+    public function setCpf($cpf)
+    {
+        $this->cpf = $cpf;
     }
 
     /**

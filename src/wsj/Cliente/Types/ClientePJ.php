@@ -1,11 +1,13 @@
 <?php
-namespace wsj\Cliente\Types;
+namespace WSJ\Cliente\Types;
 
 use wsj\Cliente\ClienteAbstract;
-use wsj\Cliente\ClienteInterface;
+use WSJ\Cliente\ClienteEnderecoInterface;
+use WSJ\Cliente\ClienteGrauInterface;
 
-class ClientePJ extends ClienteAbstract implements ClienteInterface {
+class ClientePJ extends ClienteAbstract implements ClienteGrauInterface, ClienteEnderecoInterface {
 
+    private $cnpj;
     private $grau;
     private $end;
 
@@ -15,6 +17,22 @@ class ClientePJ extends ClienteAbstract implements ClienteInterface {
 
     public function enderecoCobranca($end){
         $this->end = $end;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCnpj()
+    {
+        return $this->cnpj;
+    }
+
+    /**
+     * @param mixed $cnpj
+     */
+    public function setCnpj($cnpj)
+    {
+        $this->cnpj = $cnpj;
     }
 
     /**

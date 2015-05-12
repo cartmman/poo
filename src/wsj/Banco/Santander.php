@@ -1,7 +1,7 @@
 <?php
-namespace wsj\Banco;
+namespace WSJ\Banco;
 
-use \wsj\Conta\ContaAbstract;
+use \WSJ\Conta\ContaAbstract;
 
 class Santander {
 

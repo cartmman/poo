@@ -1,7 +1,7 @@
 <?php
-namespace wsj\Conta;
+namespace WSJ\Conta;
 
-use wsj\Conta\Util\ProcessoTrait;
+use WSJ\Conta\Util\ProcessoTrait;
 
 abstract class ContaAbstract {
 

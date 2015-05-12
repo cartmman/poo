@@ -5,12 +5,12 @@ spl_autoload_register();
 
 for($i=0;$i<=9;$i++) {
     $c[$i] = new \wsj\Cliente\Types\ClientePF();
-    $c[$i]->setNome("Nome do cliente ".$i)
-          ->setCpf(mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9))
-          ->setEndereco("Endereço do cliente ".$i)
-          ->setEmail("cliente".$i."@email.com")
-          ->setTelefone(mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9)."-".mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9));
+    $c[$i]->setNome("Nome do cliente ".$i);
+    $c[$i]->setCpf(mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9));
+    $c[$i]->setEmail("cliente".$i."@email.com");
+    $c[$i]->setTelefone(mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9)."-".mt_rand(0,9).mt_rand(0,9).mt_rand(0,9).mt_rand(0,9));
     $c[$i]->grauImportancia(mt_rand(1,5));
+    $c[$i]->setEndereco("Endereço do cliente ".$i);
     $c[$i]->enderecoCobranca("Endereço cobrança cliente ".$i);
     $clientes[] = $c[$i];
 }

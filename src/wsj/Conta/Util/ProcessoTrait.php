@@ -1,5 +1,5 @@
 <?php
-namespace wsj\Conta\Util;
+namespace WSJ\Conta\Util;
 
 trait ProcessoTrait {
 

@@ -1,10 +1,9 @@
 <?php
-namespace wsj\Cliente;
+namespace WSJ\Cliente;
 
 abstract class ClienteAbstract {
 
     private $nome;
-    private $cpf;
     private $endereco;
     private $email;
     private $telefone;
@@ -23,23 +22,6 @@ abstract class ClienteAbstract {
     public function setNome($nome)
     {
         $this->nome = $nome;
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getCpf()
-    {
-        return $this->cpf;
-    }
-
-    /**
-     * @param mixed $cpf
-     */
-    public function setCpf($cpf)
-    {
-        $this->cpf = $cpf;
         return $this;
     }
 
