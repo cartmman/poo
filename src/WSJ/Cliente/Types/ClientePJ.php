@@ -12,6 +12,7 @@ class ClientePJ extends ClienteAbstract implements PJInterface {
     public function setCnpj($cnpj)
     {
         $this->cnpj = $cnpj;
+        return $this;
     }
 
     public function getCnpj()
@@ -21,7 +22,8 @@ class ClientePJ extends ClienteAbstract implements PJInterface {
 
     public function setRazaoSocial($razaoSocial)
     {
-        return $this->razaoSocial = $razaoSocial;
+        $this->razaoSocial = $razaoSocial;
+        return $this;
     }
 
     public function getRazaoSocial()

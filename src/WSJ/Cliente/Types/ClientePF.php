@@ -11,6 +11,7 @@ class ClientePF extends ClienteAbstract implements PFInterface{
     public function setCpf($cpf)
     {
         $this->cpf = $cpf;
+        return $this;
     }
 
     public function getCpf()

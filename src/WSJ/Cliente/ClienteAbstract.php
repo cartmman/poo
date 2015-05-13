@@ -102,6 +102,7 @@ abstract class ClienteAbstract implements ClienteEnderecoInterface, ClienteGrauI
     public function setTelefone($telefone)
     {
         $this->telefone = $telefone;
+        return $this;
     }
 
 }
