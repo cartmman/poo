@@ -2,53 +2,31 @@
 namespace WSJ\Cliente\Types;
 
 use WSJ\Cliente\ClienteAbstract;
-use WSJ\Cliente\ClienteEnderecoInterface;
-use WSJ\Cliente\ClienteGrauInterface;
+use WSJ\Cliente\PJInterface;
 
-class ClientePJ extends ClienteAbstract implements ClienteGrauInterface, ClienteEnderecoInterface {
+class ClientePJ extends ClienteAbstract implements PJInterface {
 
     private $cnpj;
-    private $grau;
-    private $end;
+    private $razaoSocial;
 
-    public function grauImportancia($grau){
-        $this->grau = $grau;
-    }
-
-    public function enderecoCobranca($end){
-        $this->end = $end;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getCnpj()
-    {
-        return $this->cnpj;
-    }
-
-    /**
-     * @param mixed $cnpj
-     */
     public function setCnpj($cnpj)
     {
         $this->cnpj = $cnpj;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getGrau()
+    public function getCnpj()
     {
-        return $this->grau;
+        return $this->cnpj;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getEnd()
+    public function setRazaoSocial($razaoSocial)
     {
-        return $this->end;
+        return $this->razaoSocial = $razaoSocial;
+    }
+
+    public function getRazaoSocial()
+    {
+        return $this->razaoSocial;
     }
 
 }

@@ -1,12 +1,41 @@
 <?php
 namespace WSJ\Cliente;
 
-abstract class ClienteAbstract {
+abstract class ClienteAbstract implements ClienteEnderecoInterface, ClienteGrauInterface{
 
     private $nome;
     private $endereco;
     private $email;
     private $telefone;
+    private $grau;
+    private $end;
+
+    public function grauImportancia($grau){
+        $this->grau = $grau;
+        return $this;
+    }
+
+    public function enderecoCobranca($end){
+        $this->end = $end;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getGrau()
+    {
+        return $this->grau;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEnd()
+    {
+        return $this->end;
+    }
+
 
     /**
      * @return mixed

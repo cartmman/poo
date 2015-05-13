@@ -2,55 +2,19 @@
 namespace WSJ\Cliente\Types;
 
 use WSJ\Cliente\ClienteAbstract;
-use WSJ\Cliente\ClienteEnderecoInterface;
-use WSJ\Cliente\ClienteGrauInterface;
+use WSJ\Cliente\PFInterface;
 
-class ClientePF extends ClienteAbstract implements ClienteGrauInterface, ClienteEnderecoInterface {
+class ClientePF extends ClienteAbstract implements PFInterface{
 
     private $cpf;
-    private $grau;
-    private $end;
 
-    public function grauImportancia($grau){
-        $this->grau = $grau;
-        return $this;
-    }
-
-    public function enderecoCobranca($end){
-        $this->end = $end;
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getCpf()
-    {
-        return $this->cpf;
-    }
-
-    /**
-     * @param mixed $cpf
-     */
     public function setCpf($cpf)
     {
         $this->cpf = $cpf;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getGrau()
+    public function getCpf()
     {
-        return $this->grau;
+        return $this->cpf;
     }
-
-    /**
-     * @return mixed
-     */
-    public function getEnd()
-    {
-        return $this->end;
-    }
-
 }
