@@ -1,14 +1,18 @@
 <?php
 namespace WSJ\Cliente;
 
+use WSJ\Database\Conexao;
+use WSJ\Database\Persist;
 abstract class ClienteAbstract implements ClienteEnderecoInterface, ClienteGrauInterface{
-
+    
+    
     private $nome;
     private $endereco;
     private $email;
     private $telefone;
     private $grau;
     private $end;
+    
 
     public function grauImportancia($grau){
         $this->grau = $grau;
